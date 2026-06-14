@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>黎明方舟畜牧場｜花蓮壽豐 自然放牧雞蛋</title>
+<meta name="description" content="黎明方舟畜牧場位於花蓮縣壽豐鄉共和村，依循動物福利放牧標準飼養，並輔導身心障礙者畜牧職訓。提供花蓮市／吉安／壽豐取貨與配送服務。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============ 變數與基礎 ============ */
+  :root{
+    --paper:#F7F2E6;
+    --paper-deep:#EFE5D0;
+    --paper-warm:#FBF6EA;
+    --ink:#33301F;
+    --ink-soft:#6E6952;
+    --green-deep:#41553A;
+    --green-mid:#7C9468;
+    --green-pale:#C3CDA8;
+    --gold:#E8B252;
+    --clay:#BC5B3A;
+    --wood-dark:#4A3A22;
+    --line:rgba(65,85,58,.16);
+    --font-head:'Noto Serif TC','Songti TC','PMingLiU',serif;
+    --font-body:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.95;
+    font-size:16px;
+    overflow-x:hidden;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:var(--font-head); margin:0; font-weight:700;}
+  p{margin:0;}
+  ul{margin:0; padding:0; list-style:none;}
+  :focus-visible{outline:2px solid var(--green-deep); outline-offset:3px;}
+
+  /* ============ 紙紋疊層 ============ */
+  .grain{
+    position:fixed; inset:0; z-index:999; pointer-events:none;
+    opacity:.05; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ============ 共用 ============ */
+  .wrap{max-width:1160px; margin:0 auto; padding:0 6vw;}
+  .section{position:relative; padding:6.5rem 0;}
+  .eyebrow{
+    display:inline-block; font-size:.8rem; letter-spacing:.4em;
+    color:var(--green-deep); margin-bottom:1rem; font-weight:600;
+  }
+  .section h2{
+    font-size:clamp(1.7rem,4vw,2.6rem); color:var(--green-deep);
+    line-height:1.45; margin-bottom:1.6rem;
+  }
+  @media (max-width:720px){ .section{ padding:4.5rem 0; } }
+
+  /* ============ 導覽列 ============ */
+  .site-nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(247,242,230,.86); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1160px; margin:0 auto; padding:.9rem 6vw;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{
+    display:flex; align-items:center; gap:.55rem; text-decoration:none;
+    color:var(--green-deep); font-family:var(--font-head); font-weight:700;
+    font-size:1.15rem; letter-spacing:.04em;
+  }
+  .logo svg{width:26px; height:26px;}
+  .logo-short{display:none;}
+  .nav-links{display:flex; gap:1.9rem; font-size:.93rem;}
+  .nav-links a{
+    text-decoration:none; color:var(--ink); position:relative; padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:''; position:absolute; left:0; right:0; bottom:0; height:1px;
+    background:var(--green-deep); transform:scaleX(0); transform-origin:left;
+    transition:transform .35s ease;
+  }
+  .nav-links a:hover::after,
+  .nav-links a:focus-visible::after{ transform:scaleX(1); }
+  @media (max-width:430px){
+    .logo-full{display:none;}
+    .logo-short{display:inline;}
+    .nav-links{gap:1.1rem; font-size:.85rem;}
+  }
+
+  /* ============ Hero ============ */
+  .hero{padding-top:3.5rem;}
+  .hero-inner{
+    max-width:760px; margin:0 auto; padding:3.2rem 6vw 0; text-align:center;
+  }
+  .hero-tag{
+    display:inline-block; font-size:.85rem; letter-spacing:.5em;
+    color:var(--green-deep); margin-bottom:1.5rem;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem,9vw,5.4rem); line-height:1.18; color:var(--green-deep);
+    font-weight:900; letter-spacing:.04em;
+  }
+  .hero h1 span{
+    display:block; font-size:.42em; font-weight:500; letter-spacing:.6em;
+    color:var(--green-mid); margin-top:.7rem;
+  }
+  .hero-sub{
+    margin:1.9rem auto 0; max-width:480px; color:var(--ink-soft);
+    font-size:1.04rem; line-height:2;
+  }
+  .scroll-cue{
+    display:inline-flex; flex-direction:column; align-items:center; gap:.5rem;
+    margin:2.8rem auto 0; text-decoration:none; color:var(--green-mid);
+    font-size:.78rem; letter-spacing:.3em;
+  }
+  .scroll-cue svg{width:18px; height:18px; animation:bob 2.6s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+
+  .hero-banner{margin-top:3.4rem; width:100%; line-height:0;}
+  .hero-banner svg{width:100%; height:auto;}
+  .hero-banner .sun-glow{
+    animation:glow 9s ease-in-out infinite;
+    transform-origin:1100px 130px;
+  }
+  @keyframes glow{0%,100%{opacity:.28;}50%{opacity:.42;}}
+  .hero-banner .clouds{ animation:drift 50s linear infinite alternate; }
+  @keyframes drift{from{transform:translateX(0);}to{transform:translateX(26px);}}
+
+  /* ============ 分隔稜線 ============ */
+  .divider{display:block; width:100%; height:54px; margin-top:-1px;}
+  .divider path{fill:var(--paper-deep);}
+  .divider.to-paper path{fill:var(--paper);}
+  .divider.to-green path{fill:var(--green-deep);}
+  .divider.to-wood path{fill:var(--wood-dark);}
+  @media (max-width:720px){ .divider{height:32px;} }
+
+  /* ============ 簡介 ============ */
+  .about{background:var(--paper-deep);}
+  .about-grid{
+    display:grid; grid-template-columns:1.5fr 1fr; gap:4.2rem; align-items:start;
+  }
+  .about-text p{margin-bottom:1.3rem; color:var(--ink-soft);}
+  .about-text p.lead{
+    font-family:var(--font-head); font-size:1.15rem; font-weight:600;
+    color:var(--green-deep); line-height:1.9; border-left:3px solid var(--green-mid);
+    padding-left:1.2rem; margin:1.9rem 0;
+  }
+  .about-text p.story{
+    font-size:1.02rem; line-height:1.95; color:var(--ink);
+    border-left:3px solid var(--clay); background:rgba(188,91,58,.07);
+    border-radius:0 12px 12px 0; padding:1.4rem 1.5rem; margin:1.9rem 0;
+  }
+  .cert-tag{
+    display:inline-flex; align-items:center; gap:.6rem; font-size:.85rem;
+    letter-spacing:.12em; color:var(--green-deep); border:1px solid var(--line);
+    border-radius:999px; padding:.5rem 1.2rem; margin-top:.6rem; background:var(--paper-warm);
+  }
+  .cert-tag svg{width:16px; height:16px; flex-shrink:0;}
+  .about-stamp{
+    display:flex; flex-direction:column; align-items:center; gap:1.1rem;
+    padding:2.4rem 1.6rem; background:var(--paper-warm); border:1px solid var(--line);
+    border-radius:18px; text-align:center;
+  }
+  .stamp{width:180px; height:180px; display:block;}
+  .about-stamp p{font-size:.85rem; color:var(--ink-soft); line-height:1.8;}
+  .about-stamp p strong{color:var(--green-deep); font-weight:600;}
+  @media (max-width:880px){
+    .about-grid{grid-template-columns:1fr; gap:2.6rem;}
+    .about-stamp{order:-1; max-width:300px; margin:0 auto;}
+  }
+
+  /* ============ 商品 ============ */
+  .products{background:var(--paper);}
+  .products-intro{max-width:620px; color:var(--ink-soft); margin-bottom:3rem;}
+  .subhead{
+    font-family:var(--font-head); font-size:1.3rem; color:var(--green-deep);
+    margin:0 0 1.5rem; padding-bottom:.7rem; border-bottom:1px solid var(--line);
+  }
+  .pickup-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; margin-bottom:1.4rem;
+  }
+  .pickup-card{
+    background:var(--paper-warm); border:1px solid var(--line); border-radius:14px;
+    padding:1.7rem;
+  }
+  .pickup-card svg{width:22px; height:22px; color:var(--green-deep); margin-bottom:.9rem;}
+  .pickup-card h3{font-size:1.05rem; margin-bottom:.5rem; color:var(--ink); font-weight:600;}
+  .pickup-card p{color:var(--ink-soft); font-size:.92rem; line-height:1.7;}
+  .price-note{font-size:.93rem; color:var(--ink-soft); margin:0 0 4rem;}
+  .price-note strong{color:var(--green-deep); font-weight:600;}
+
+  .price-table-wrap{margin-bottom:1.2rem; overflow-x:auto; border-radius:14px;}
+  .price-table{
+    width:100%; min-width:560px; border-collapse:collapse; background:var(--paper-warm);
+    border:1px solid var(--line); border-radius:14px; overflow:hidden;
+  }
+  .price-table th,.price-table td{
+    padding:1rem 1.3rem; text-align:left; border-bottom:1px solid var(--line);
+    font-size:.96rem;
+  }
+  .price-table thead th{
+    background:var(--green-deep); color:var(--paper-warm); font-family:var(--font-head);
+    font-weight:600; letter-spacing:.06em; font-size:.95rem;
+  }
+  .price-table tbody tr:last-child td{border-bottom:none;}
+  .price-table tbody tr:nth-child(even){background:rgba(124,148,104,.09);}
+  .price-table td.price{font-family:var(--font-head); font-weight:700; color:var(--green-deep);}
+  .price-table td.muted{color:var(--ink-soft);}
+  .table-note{font-size:.88rem; color:var(--ink-soft); margin-top:1.1rem; line-height:2;}
+  .table-note span{display:block;}
+
+  @media (max-width:760px){ .pickup-grid{grid-template-columns:1fr;} }
+  @media (max-width:640px){
+    .price-table{min-width:0;}
+    .price-table thead{display:none;}
+    .price-table, .price-table tbody, .price-table tr, .price-table td{display:block; width:100%;}
+    .price-table tr{
+      margin-bottom:14px; border:1px solid var(--line); border-radius:12px; overflow:hidden;
+    }
+    .price-table tr:last-child{margin-bottom:0;}
+    .price-table td{
+      display:flex; justify-content:space-between; align-items:center; gap:1rem;
+      border-bottom:1px solid var(--line); background:var(--paper-warm);
+    }
+    .price-table td:last-child{border-bottom:none;}
+    .price-table td::before{
+      content:attr(data-label); font-family:var(--font-head); font-weight:600;
+      color:var(--green-deep); flex-shrink:0;
+    }
+    .price-table tbody tr:nth-child(even) td{background:rgba(124,148,104,.09);}
+  }
+
+  /* ============ 聯絡我們 ============ */
+  .contact{background:var(--green-deep); color:var(--paper);}
+  .contact .eyebrow{color:var(--green-pale);}
+  .contact h2{color:var(--paper);}
+  .contact-grid{display:grid; grid-template-columns:1.05fr 1fr; gap:3.2rem; align-items:center;}
+  .contact-intro p{color:var(--green-pale); margin-bottom:1.1rem; max-width:440px;}
+  .contact-card{
+    background:var(--paper-warm); color:var(--ink); border-radius:18px; padding:2.4rem;
+  }
+  .contact-list{display:flex; flex-direction:column; gap:1.5rem;}
+  .contact-item{display:flex; gap:1rem; align-items:flex-start;}
+  .contact-item svg{width:22px; height:22px; color:var(--green-deep); flex-shrink:0; margin-top:.2rem;}
+  .contact-item .label{
+    font-size:.78rem; letter-spacing:.2em; color:var(--ink-soft); margin-bottom:.25rem;
+  }
+  .contact-item .value{font-size:1.02rem;}
+  .contact-item a{
+    color:var(--green-deep); text-decoration:none; border-bottom:1px solid transparent;
+    transition:border-color .25s;
+  }
+  .contact-item a:hover{border-color:var(--green-deep);}
+  @media (max-width:880px){ .contact-grid{grid-template-columns:1fr; gap:2.6rem;} }
+
+  /* ============ Footer ============ */
+  .site-footer{
+    background:var(--wood-dark); color:var(--paper-deep); text-align:center;
+    padding:2.8rem 6vw; font-size:.85rem; line-height:2;
+  }
+  .site-footer .cert{opacity:.65; margin-top:.3rem;}
+
+  /* ============ 滾動淡入 ============ */
+  .reveal{opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .reveal.visible{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1; transform:none; transition:none;}
+    .scroll-cue svg{animation:none;}
+    .hero-banner .sun-glow,.hero-banner .clouds{animation:none;}
+  }
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============ 導覽列 ============ -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="logo" href="#top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3C8.5 8 6 12 6 15.5a6 6 0 0012 0C18 12 15.5 8 12 3z"/>
+        <path d="M9.3 16.6c1 .9 1.8 1.2 2.7 1.2s1.7-.3 2.7-1.2"/>
+      </svg>
+      <span class="logo-full">黎明方舟畜牧場</span>
+      <span class="logo-short">黎明方舟</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">簡介</a>
+      <a href="#products">商品</a>
+      <a href="#contact">聯絡我們</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <span class="hero-tag">花蓮 · 壽豐 · 共和村</span>
+    <h1>黎明方舟<span>畜牧場</span></h1>
+    <p class="hero-sub">
+      在中央山脈與海岸山脈之間，雞群自由地生活，也有一群特別的夥伴每天在這裡工作。每一顆蛋，都帶著山風、晨光，還有許多人的用心。
+    </p>
+    <a class="scroll-cue" href="#about">
+      <span>了解牧場</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 4v15M5 12l7 7 7-7"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero-banner" aria-hidden="true">
+    <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="花蓮壽豐黎明方舟畜牧場晨間山景，遠山稜線與放牧雞群">
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#D8E4C8"/>
+          <stop offset="0.55" stop-color="#F1DFAE"/>
+          <stop offset="1" stop-color="#F6D38F"/>
+        </linearGradient>
+        <filter id="softBlur" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="18"/>
+        </filter>
+        <g id="hen">
+          <path d="M-22,-2 C-32,-9 -34,4 -23,7 Z" fill="#9C6B41"/>
+          <ellipse cx="0" cy="0" rx="18" ry="13" fill="#AE7A4C"/>
+          <circle cx="16" cy="-12" r="7" fill="#AE7A4C"/>
+          <path d="M13,-19 q1,-5 3,-1 q1,-5 3,-1 q2,-3 2,1 q-1,3 -8,3 Z" fill="#BC5B3A"/>
+          <path d="M22,-12 l8,2 l-8,3 Z" fill="#E8B252"/>
+          <line x1="-4" y1="11" x2="-6" y2="20" stroke="#6B4423" stroke-width="2.4" stroke-linecap="round"/>
+          <line x1="6" y1="11" x2="8" y2="20" stroke="#6B4423" stroke-width="2.4" stroke-linecap="round"/>
+        </g>
+        <g id="hen-peck">
+          <path d="M-22,-2 C-32,-9 -34,4 -23,7 Z" fill="#9C6B41"/>
+          <ellipse cx="0" cy="0" rx="18" ry="13" fill="#AE7A4C"/>
+          <circle cx="15" cy="6" r="7" fill="#AE7A4C"/>
+          <path d="M21,8 l9,3 l-9,2 Z" fill="#E8B252"/>
+          <line x1="-4" y1="11" x2="-6" y2="20" stroke="#6B4423" stroke-width="2.4" stroke-linecap="round"/>
+          <line x1="6" y1="11" x2="8" y2="20" stroke="#6B4423" stroke-width="2.4" stroke-linecap="round"/>
+        </g>
+      </defs>
+
+      <!-- 晨光天空 -->
+      <rect width="1440" height="600" fill="url(#skyGrad)"/>
+
+      <!-- 太陽 -->
+      <circle class="sun-glow" cx="1100" cy="130" r="140" fill="#F7CD6E" opacity="0.35" filter="url(#softBlur)"/>
+      <circle cx="1100" cy="130" r="60" fill="#F6C24E"/>
+
+      <!-- 雲 -->
+      <g class="clouds" opacity="0.6" fill="#FFF7E4">
+        <ellipse cx="250" cy="110" rx="70" ry="20"/>
+        <ellipse cx="312" cy="124" rx="50" ry="16"/>
+        <ellipse cx="610" cy="72" rx="55" ry="15"/>
+        <ellipse cx="662" cy="84" rx="40" ry="12"/>
+      </g>
+
+      <!-- 飛鳥 -->
+      <g stroke="#5C5840" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5">
+        <path d="M120,60 q8,-10 16,0 q8,-10 16,0"/>
+        <path d="M186,92 q7,-9 14,0 q7,-9 14,0"/>
+        <path d="M860,55 q8,-10 16,0 q8,-10 16,0"/>
+      </g>
+
+      <!-- 海岸山脈（遠） -->
+      <path d="M0,300 C90,270 200,295 320,275 C440,255 540,300 660,280 C780,260 900,305 1020,285 C1140,265 1260,300 1380,280 C1410,275 1430,278 1440,278 L1440,600 L0,600 Z" fill="#C3CDA8"/>
+
+      <!-- 中央山脈（中） -->
+      <path d="M0,365 C120,335 240,380 380,355 C520,330 640,383 780,360 C920,337 1040,385 1180,363 C1280,348 1380,365 1440,357 L1440,600 L0,600 Z" fill="#94AC78"/>
+
+      <!-- 牧場前丘（近） -->
+      <path d="M0,435 C160,405 320,450 480,427 C640,404 800,453 960,430 C1120,407 1280,450 1440,433 L1440,600 L0,600 Z" fill="#56693F"/>
+
+      <!-- 雞舍 -->
+      <polygon points="125,398 215,348 305,398" fill="#4A3A22"/>
+      <rect x="140" y="398" width="150" height="62" fill="#6E4F2C"/>
+      <rect x="195" y="425" width="28" height="35" fill="#3A2C18"/>
+      <rect x="255" y="415" width="24" height="24" fill="#F6D38F" opacity="0.85"/>
+      <g stroke="#6E4F2C" stroke-width="2">
+        <line x1="267" y1="415" x2="267" y2="439"/>
+        <line x1="255" y1="427" x2="279" y2="427"/>
+      </g>
+
+      <!-- 籬笆 -->
+      <g stroke="#7C5A37" stroke-width="4" stroke-linecap="round">
+        <line x1="970" y1="525" x2="970" y2="470"/>
+        <line x1="1030" y1="525" x2="1032" y2="466"/>
+        <line x1="1090" y1="525" x2="1090" y2="472"/>
+        <line x1="1150" y1="525" x2="1148" y2="468"/>
+        <line x1="1210" y1="525" x2="1212" y2="474"/>
+        <line x1="962" y1="483" x2="1218" y2="478"/>
+        <line x1="962" y1="506" x2="1218" y2="502"/>
+      </g>
+
+      <!-- 草叢 -->
+      <g stroke="#3F5132" stroke-width="2" stroke-linecap="round" opacity="0.55">
+        <path d="M300,540 l-3,-14 M300,540 l1,-16 M300,540 l5,-13"/>
+        <path d="M540,548 l-3,-14 M540,548 l1,-16 M540,548 l5,-13"/>
+        <path d="M790,545 l-3,-14 M790,545 l1,-16 M790,545 l5,-13"/>
+        <path d="M1320,540 l-3,-14 M1320,540 l1,-16 M1320,540 l5,-13"/>
+      </g>
+
+      <!-- 放牧雞群 -->
+      <use href="#hen" transform="translate(390,505) scale(1.1)"/>
+      <use href="#hen-peck" transform="translate(545,525) scale(0.95)"/>
+      <use href="#hen" transform="translate(705,498) scale(-1,1)"/>
+      <use href="#hen-peck" transform="translate(865,528) scale(1.05)"/>
+      <use href="#hen" transform="translate(1330,508) scale(0.95)"/>
+    </svg>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,32 C120,8 240,56 360,40 C480,24 600,64 720,44 C840,28 960,60 1080,40 C1200,24 1320,56 1440,32 L1440,80 L0,80 Z"/></svg>
+</div>
+
+<!-- ============ 簡介 ============ -->
+<section class="about section" id="about">
+  <div class="wrap about-grid">
+    <div class="about-text reveal">
+      <span class="eyebrow">簡介</span>
+      <h2>在山與海之間，自然放牧</h2>
+      <p>
+        黎明方舟畜牧場位於花蓮縣壽豐鄉共和村，背倚中央山脈，遠遠望去是海岸山脈的稜線。群山涵養出純淨而豐沛的水脈，滋潤著這片土地，也是牧場裡每一隻雞最自然的家。
+      </p>
+      <p class="lead">
+        我們依循動物福利的放牧飼養標準照顧雞群——讓牠們能自由活動、曬到太陽、踩到土地，過著比較像「雞」的生活。
+      </p>
+      <p class="story">
+        照顧這些雞的，還有一群特別的夥伴。在黎明方舟，你會看到身心障礙的學員和我們一起工作，每天餵雞、撿蛋、整理蛋箱。這些看似平凡的日常，對他們來說卻是一步一步找回信心、學習獨立生活的過程。每一顆送到你手上的蛋，都經過他們認真的雙手。
+      </p>
+      <p>
+        這樣的飼養方式，也通過了社團法人台灣動物社會研究會「動物福利標章暨友善雞蛋聯盟」的認證——代表每年都有獨立的第三方單位來牧場檢查，確認雞群真的能自由活動、曬到太陽，不是我們自己說了算。
+      </p>
+      <span class="cert-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/>
+        </svg>
+        農畜牧登字第 223640 號
+      </span>
+    </div>
+
+    <div class="about-stamp reveal">
+      <img class="stamp" src="data:image/webp;base64,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" alt="動物福利標章認證圖樣，台灣動物社會研究會驗證" width="299" height="299" loading="lazy" />
+      <p>
+        <strong>社團法人台灣動物社會研究會</strong><br>
+        動物福利標章暨友善雞蛋聯盟成員
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider to-paper" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,32 C120,8 240,56 360,40 C480,24 600,64 720,44 C840,28 960,60 1080,40 C1200,24 1320,56 1440,32 L1440,80 L0,80 Z"/></svg>
+</div>
+
+<!-- ============ 商品 ============ -->
+<section class="products section" id="products">
+  <div class="wrap">
+    <span class="eyebrow">商品</span>
+    <h2>新鮮直送，安心選擇</h2>
+    <p class="products-intro reveal">
+          我們提供花蓮市、吉安、壽豐三地的取貨與配送服務。每一盒蛋都自牧場新鮮包裝送出，歡迎個人零售取貨，也歡迎公司、團體以團購方式預約定點親送。
+    </p>
+
+    <h3 class="subhead">取貨地點</h3>
+    <div class="pickup-grid">
+      <div class="pickup-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>
+        </svg>
+        <h3>黎明教養院</h3>
+        <p>花蓮市民權路2-2號</p>
+      </div>
+      <div class="pickup-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>
+        </svg>
+        <h3>黎明方舟畜牧場</h3>
+        <p>花蓮縣壽豐鄉共和村吉利街28號</p>
+      </div>
+      <div class="pickup-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>
+        </svg>
+        <h3>黎明庇護工場</h3>
+        <p>花蓮市富安路38號</p>
+      </div>
+    </div>
+    <p class="price-note reveal">零售點取貨價：每盒（10入）<strong>130 元</strong></p>
+
+    <h3 class="subhead">定點配送方案</h3>
+    <p class="products-intro reveal" style="margin-bottom:1.6rem;">
+      花蓮市、吉安、壽豐地區，公司或團體訂購 10 盒（10入）以上，提供定點親送服務。
+    </p>
+    <div class="price-table-wrap reveal">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>方案</th>
+            <th>規格</th>
+            <th>單次價格</th>
+            <th>定期配送（每月 1 箱以上）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="方案">每週固定訂購</td>
+            <td data-label="規格">每盒 10 入・10 盒以上</td>
+            <td data-label="單次價格" class="price">120 元 / 盒</td>
+            <td data-label="定期配送" class="muted">—</td>
+          </tr>
+          <tr>
+            <td data-label="方案">小箱</td>
+            <td data-label="規格">6 盒・共 60 入</td>
+            <td data-label="單次價格" class="price">1,020 元 / 箱</td>
+            <td data-label="定期配送" class="price">960 元 / 箱</td>
+          </tr>
+          <tr>
+            <td data-label="方案">大箱</td>
+            <td data-label="規格">9 盒・共 90 入</td>
+            <td data-label="單次價格" class="price">1,530 元 / 箱</td>
+            <td data-label="定期配送" class="price">1,440 元 / 箱</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note reveal">
+      <span>・定期配送方案需每月固定訂購一箱以上，方可享有優惠價格。</span>
+      <span>・定點送貨服務範圍為花蓮市、吉安鄉、壽豐鄉，歡迎公司或團體來電洽詢團購親送細節。</span>
+    </p>
+  </div>
+</section>
+
+<div class="divider to-green" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,32 C120,8 240,56 360,40 C480,24 600,64 720,44 C840,28 960,60 1080,40 C1200,24 1320,56 1440,32 L1440,80 L0,80 Z"/></svg>
+</div>
+
+<!-- ============ 聯絡我們 ============ -->
+<section class="contact section" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-intro reveal">
+      <span class="eyebrow">聯絡我們</span>
+      <h2>歡迎來信或來電</h2>
+      <p>關於取貨、配送或團購合作，歡迎於營業時間內與我們聯繫，黎明方舟團隊將盡快為您回覆。</p>
+    </div>
+
+    <div class="contact-card reveal">
+      <div class="contact-list">
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 3.2"/>
+          </svg>
+          <div>
+            <p class="label">營業時間</p>
+            <p class="value">週一至週五 08:00&nbsp;–&nbsp;17:00</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c.8-4 4-6 7.5-6s6.7 2 7.5 6"/>
+          </svg>
+          <div>
+            <p class="label">接洽人員</p>
+            <p class="value">吳小姐</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 4.5h3l1.6 4.3-2 1.6a10.8 10.8 0 005 5l1.6-2 4.3 1.6V18a2 2 0 01-2 2A14.5 14.5 0 013 6.5a2 2 0 012-2z"/>
+          </svg>
+          <div>
+            <p class="label">接洽電話</p>
+            <p class="value"><a href="tel:+88638663489">(03) 866-3489</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/>
+          </svg>
+          <div>
+            <p class="label">接洽 Email</p>
+            <p class="value"><a href="mailto:2024002@newdawn.org.tw">2024002@newdawn.org.tw</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider to-wood" aria-hidden="true">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,32 C120,8 240,56 360,40 C480,24 600,64 720,44 C840,28 960,60 1080,40 C1200,24 1320,56 1440,32 L1440,80 L0,80 Z"/></svg>
+</div>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <p>黎明方舟畜牧場　花蓮縣壽豐鄉共和村吉利街28號</p>
+  <p class="cert">農畜牧登字第223640號・社團法人台灣動物社會研究會 動物福利標章暨友善雞蛋聯盟成員</p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var targets = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function (el) { el.classList.add('visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(function (el) { observer.observe(el); });
+  });
+</script>
+</body>
+</html>
